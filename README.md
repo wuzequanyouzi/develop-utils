@@ -2,4 +2,4 @@
 
 ## markdown-loader
 
-## docs
+## docs-cli-plugin

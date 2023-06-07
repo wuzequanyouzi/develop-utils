@@ -1,16 +1,24 @@
-## 小鹅组件库文档预览与打包插件
+# docs-site
 
-使用方式
-```bash
-cnpm i @youziup/vue-cli-plugin-docs
-# 预览
-npx vue-cli-service serve --mode docs
-
-# 打包
-npx vue-cli-service build --no-module --mode docs
+## Project setup
+```
+pnpm install
 ```
 
-### props
-|  参数   | 说明  |
-|  ----  | ----  |
-|  mode  | 模式，文档预览需要指定值为docs |
+### Compiles and hot-reloads for development
+```
+pnpm run serve
+```
+
+### Compiles and minifies for production
+```
+pnpm run build
+```
+
+### Lints and fixes files
+```
+pnpm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
