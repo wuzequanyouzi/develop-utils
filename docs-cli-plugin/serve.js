@@ -46,7 +46,7 @@ module.exports = (api) => {
 						.loader("vue-loader")
 						.end()
 						.use("@youziup/markdown-loader")
-						.loader("@youziup/markdown-loader")
+						.loader("../markdown-loader/index.js")
 						.options({
 							framework: "vue",
 						})

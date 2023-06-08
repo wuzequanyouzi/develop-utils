@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "该插件用于预览和打包Vue组件文档",
   "dependencies": {
-    "@youziup/markdown-loader": "file:.yalc/@youziup/markdown-loader",
     "kolorist": "1.6.0",
     "prompts": "2.4.2"
   },
