@@ -15,9 +15,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: build docs
-        run: cd /home/runner/work/develop-utils/develop-utils/docs-site
-        run: npm install
-        run: npm run build
+        run: 
+            cd /home/runner/work/develop-utils/develop-utils/docs-site
+            npm install
+            npm run build
       
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.3
