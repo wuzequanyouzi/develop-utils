@@ -25,3 +25,4 @@ jobs:
         with:
           branch: docs # 部署后提交到那个分支
           folder: docs-site/dist # 这里填打包好的目录名称
+          target-folder: docs
