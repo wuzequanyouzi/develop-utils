@@ -1,7 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
-  陈海群，陈海清
+  鸡坤 ikun
 </template>
 
 <script>
