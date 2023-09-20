@@ -90,12 +90,13 @@ module.exports.deleteMainJs = (name) => {
   }
 }
 
-module.exports.generateCompsPath = () => {
+module.exports.generateCompsPath = (docsConfig) => {
   const pathMap = {};
+  const { libName } = docsConfig;
   // 读取组件所有产物名
-  const dirs = fs.readdirSync('./lib');
+  const dirs = fs.readdirSync(libName);
   dirs.forEach(dir => {
-    const _path = `./lib/${dir}`;
+    const _path = path.resolve(libName, dir);
     if (fs.lstatSync(_path).isDirectory()) {
       pathMap[dir] = fs.readdirSync(_path).map(file => `components/${dir}/${file}`);
     };
@@ -103,11 +104,12 @@ module.exports.generateCompsPath = () => {
   return pathMap;
 }
 
-module.exports.getChangelogCompPath = () => {
+module.exports.getChangelogCompPath = (docsConfig) => {
+  const { libName } = docsConfig;
   let changelogPath = null;
   // 读取现有组件
   try {
-    const _path = `./lib/${CHANGELOG_NAME}`;
+    const _path = `./${libName}/${CHANGELOG_NAME}`;
     if (fs.lstatSync(_path).isDirectory()) {
       changelogPath = fs.readdirSync(_path).map(file => `component-docs/${projectInfo.name}/${file}`);
     };
@@ -119,14 +121,10 @@ module.exports.getChangelogCompPath = () => {
 }
 
 module.exports.buildMetaInfo = (name, metaPath, compPath) => {
+  let metaInfo;
   if (fs.existsSync(metaPath)) {
     const metaFile = fs.readFileSync(metaPath);
-    const metaInfo = JSON.parse(metaFile.toString());
-    metaInfo.name = name;
-    metaInfo.docs = compPath;
-
-    // __buildMdAnchorMap__ 值从md-loader注入
-    metaInfo.anchor = global.__buildMdAnchorMap__[name]
+    metaInfo = JSON.parse(metaFile.toString());
 
     // 判断业务框架
     // const dependencies = Object.keys(projectInfo.dependencies);
@@ -142,7 +140,14 @@ module.exports.buildMetaInfo = (name, metaPath, compPath) => {
     //   }
     // })
     // metaInfo.projectInfo = projectInfo;
-    return metaInfo;
+  } else {
+    metaInfo = {};
   }
-  return null;
+
+  metaInfo.name = name;
+  metaInfo.docs = compPath;
+
+  // __buildMdAnchorMap__ 值从md-loader注入
+  metaInfo.anchor = global.__buildMdAnchorMap__[name]
+  return metaInfo;
 }

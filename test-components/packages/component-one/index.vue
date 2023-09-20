@@ -1,12 +1,17 @@
 <template>
-    <div>
+    <div @click="handleClick">
         ComponentOne
     </div>
 </template>
 
 <script>
 export default {
-    name: 'ComponentOne'
+    name: 'ComponentOne',
+    methods: {
+        handleClick() {
+            alert('xixi1111')
+        }
+    }
 }
 </script>
 
