@@ -6,13 +6,14 @@
     </div>
     <div class="content">
       <List class="content-left" :list="article"/>
-      <div class="content-right">描述块</div>
+      <Author class="content-right"/>
     </div>
   </div>
 </template>
 
 <script name="Home" setup>
 import List from './components/list/index.vue';
+import Author from './components/author/index.vue';
 import article from '../../article/index.js';
 </script>
 
@@ -50,8 +51,7 @@ import article from '../../article/index.js';
       margin-right: 100px;
     }
     .content-right {
-      width: 200px;
-      height: 400px;
+      margin-top: 20px;
       margin-left: auto;
     }
   }
