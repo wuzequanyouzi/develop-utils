@@ -32,7 +32,7 @@ module.exports = defineConfig({
           [
             anchor,
             {
-              permalink: anchor.permalink.headerLink(),
+              // permalink: anchor.permalink.headerLink(),
             },
           ],
         ],

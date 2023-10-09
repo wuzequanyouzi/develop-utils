@@ -32,7 +32,7 @@ import article from '../../article/index.js';
     }
     .title {
       position: absolute;
-      top: 35%;
+      top: 40%;
       left: 50%;
       font-size: 30px;
       color: #eee;

@@ -1,45 +1,16 @@
-const test = () => import('./list/test.md');
 export default [
   {
-    title: '1. 创建一个新项目',
-    component: test,
-    time: '2019-04-22',
-    desc: '创建一个新项目',
-    id: 1,
-  },
-  {
-    title: '1. 创建一个新项目',
-    component: test,
-    time: '2019-04-22',
-    desc: '创建一个新项目',
+    title: 'Cesium 导航罗盘',
+    component: () => import('./list/02.md'),
+    time: '2021-07-22',
+    desc: '之前在搞智慧城市，项目的3D地图页面是第三方提供的，产品经理老过来提3D地图的需求，搞得我三天两头就对接第三方，第三方以这没办法做、那性能不行等理由搪塞（还没给钱，不做）。没办法自己......',
     id: 2,
   },
   {
-    title: '1. 创建一个新项目',
-    component: test,
-    time: '2019-04-22',
-    desc: '创建一个新项目',
-    id: 3,
-  },
-  {
-    title: '1. 创建一个新项目',
-    component: test,
-    time: '2019-04-22',
-    desc: '创建一个新项目',
-    id: 4,
-  },
-  {
-    title: '1. 创建一个新项目',
-    component: test,
-    time: '2019-04-22',
-    desc: '创建一个新项目',
-    id: 5,
-  },
-  {
-    title: '1. 创建一个新项目',
-    component: test,
-    time: '2019-04-22',
-    desc: '创建一个新项目',
-    id: 6,
-  },
+    title: 'Cesium加载大量Label实体时卡顿的一种解决方法',
+    component: () => import('./list/01.md'),
+    time: '2021-04-08',
+    desc: '笔者接触CesiumJS是由于公司项目需要，直接边学边开发，两三个月来都挺顺风顺水的。直到数据量越来越大，地图上的实体越来越多，首屏加载的时候经常会卡顿，客户那边的机器性能太差，有时候卡顿的同时还出现浏览器无响应问题。测试把这个问题归为BUG，要求必须解决，搞得我头大。',
+    id: 1,
+  }
 ];

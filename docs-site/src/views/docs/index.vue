@@ -1,11 +1,12 @@
 <template>
-  <div class="docs-content">
+  <div class="docs-content markdown-body">
     <Test />
   </div>
 </template>
 
 <script setup>
 import "highlight.js/styles/github.css";
+import "../../styles/markdown.scss";
 import { useRoute } from "vue-router";
 import articleInfo from "../../article";
 import { defineAsyncComponent } from "vue";
