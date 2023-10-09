@@ -14,8 +14,8 @@
 <script setup>
 import { Search } from "@element-plus/icons-vue";
 import Menu from "./menu.vue";
-import { ref } from 'vue';
-const searchKey = ref('')
+import useSearch from '../../hooks/search';
+const { searchKey } = useSearch();
 </script>
 
 <style lang="scss" scoped>

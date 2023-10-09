@@ -7,7 +7,7 @@
       @click="$router.push(item.path)"
     >
       <i></i>
-      <span>{{ item.name }}</span>
+      <span class="menu-name">{{ item.name }}</span>
     </div>
   </div>
 </template>
@@ -17,19 +17,19 @@ import { ref } from 'vue'
 const menu = ref([
   {
     path: '/',
-    name: '首页',
+    name: '🏠 首页',
     key: 'home',
     icon: 'home'
   },
   {
     path: '/records',
-    name: '归档',
+    name: '📅 归档',
     key: 'records',
     icon: 'records'
   },
   {
     path: '/category',
-    name: '分类',
+    name: '📂 分类',
     key: 'category',
     icon: 'category'
   }
@@ -43,7 +43,7 @@ const menu = ref([
   align-items: center;
   user-select: none;
   .menu-item {
-    margin-right: 10px;
+    margin-right: 14px;
     cursor: pointer;
     &::after {
       content: '';
@@ -57,6 +57,9 @@ const menu = ref([
       &::after {
         opacity: 1;
       }
+    }
+    .menu-name {
+      font-size: 14px;
     }
   }
 }

@@ -45,9 +45,9 @@
     <div class="card-content">
       <h4 class="nickname">吴泽权</h4>
       <div class="tag">
-        <div>💡学习</div>
+        <div>💡 学习</div>
         <div><img class="icon" src="../../../../assets/imgs/guga.png"/><span>特摄</span></div>
-        <div>🍟美食</div>
+        <div>🍟 美食</div>
       </div>
       <div class="desc">
         学习以及工作中遇到的问题记录，希望可以帮到其他人。

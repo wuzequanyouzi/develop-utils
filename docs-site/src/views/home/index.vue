@@ -5,7 +5,7 @@
       <p class="title"> 雄关漫道真如铁，而今迈步从头越 </p>
     </div>
     <div class="content">
-      <List class="content-left" :list="article"/>
+      <List class="content-left" :list="articleList"/>
       <Author class="content-right"/>
     </div>
   </div>
@@ -15,6 +15,22 @@
 import List from './components/list/index.vue';
 import Author from './components/author/index.vue';
 import article from '../../article/index.js';
+import useSearch from '../../hooks/search';
+
+import { watch, ref } from 'vue';
+
+const articleList = ref([...article]);
+
+const { searchKey } = useSearch();
+
+watch(searchKey, () => {
+  if (searchKey.value) {
+    articleList.value = article.filter(item => item.title.includes(searchKey.value));
+  } else {
+    articleList.value = [...article];
+  }
+})
+
 </script>
 
 <style lang="scss" scoped>
