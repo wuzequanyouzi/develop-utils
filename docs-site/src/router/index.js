@@ -8,28 +8,46 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
+    meta: {
+      title: '首页'
+    }
   },
   {
     path: "/records",
     name: "Records",
-    component: Records
+    component: Records,
+    meta: {
+      title: '归纳'
+    }
   },
   {
     path: "/category",
     name: "Category",
-    component: Category
+    component: Category,
+    meta: {
+      title: '分类'
+    }
   },
   {
     path: "/docs/:id",
     name: "Docs",
-    component: Docs
+    component: Docs,
   }
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes
+})
+
+router.beforeEach((to) => {
+  if (to.meta?.title) {
+    window.document.title = to.meta.title;
+  } else {
+    window.document.title = '学习笔记';
+  }
+  return true;
 })
 
 export default router;
