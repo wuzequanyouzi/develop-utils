@@ -1,6 +1,9 @@
 <template>
   <div class="author-wrap">
-    <div class="header"></div>
+    <div class="header">
+      <svg t="1696908078106" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11077" width="12" height="12"><path d="M300.8 960h179.2V480H300.8V960z m480-896v896H960V64h-179.2zM544 960h179.2V243.2H544V960zM64 960h179.2v-300.8H64V960z" fill="#1afa29" p-id="11078"></path></svg>
+      <svg t="1696907952840" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5001" width="24" height="24"><path d="M301.511111 395.377778m7.111111 0l275.911111 0q7.111111 0 7.111111 7.111111l0 142.222222q0 7.111111-7.111111 7.111111l-275.911111 0q-7.111111 0-7.111111-7.111111l0-142.222222q0-7.111111 7.111111-7.111111Z" fill="#FBAE17" p-id="5002"></path><path d="M766.577778 395.377778m2.844444 0l36.977778 0q2.844444 0 2.844444 2.844444l0 150.755556q0 2.844444-2.844444 2.844444l-36.977778 0q-2.844444 0-2.844444-2.844444l0-150.755556q0-2.844444 2.844444-2.844444Z" fill="#4D4D4D" p-id="5003"></path><path d="M726.755556 617.244444h-469.333334l-21.333333-21.333333v-241.777778l21.333333-21.333333h469.333334l21.333333 21.333333v241.777778z m-448-42.666666h426.666666v-199.111111h-426.666666z" fill="#4D4D4D" p-id="5004"></path></svg>
+    </div>
     <div class="img">
       <img src="../../../../assets/imgs/show.jpg" alt="动感超人" />
     </div>
@@ -71,11 +74,20 @@ const handleClick = (url) => {
   border-radius: 16px;
   overflow: hidden;
   background-color: #fff;
+  margin-bottom: 20px;
   .header {
     width: 100%;
     height: 20px;
     display: flex;
+    align-items: center;
     background: #e3e3e3;
+    justify-content: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+    .icon {
+      text-align: right;
+      margin-right: 2px;
+    }
   }
   .img {
     margin: 30px auto 20px;
