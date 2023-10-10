@@ -2,7 +2,7 @@ export default [
   {
     title: '从零实现属于自己的前端脚手架',
     component: () => import('./list/04.md'),
-    time: '2022-08-14',
+    time: '2023-03-19',
     desc: '对于前端开发，前端脚手架是伴随前端工程化发展而产生的，通过选择几个选项快速搭建项目基础代码的工具。它可以有效避免我们ctrl + c/v。',
     id: 3,
   },
@@ -28,3 +28,47 @@ export default [
     id: 1,
   }
 ];
+
+
+export const records = [
+  {
+    data: '2023-03',
+    list: [
+      {
+        title: '从零实现属于自己的前端脚手架',
+        time: '2023-03-19',
+        id: 3,
+      }
+    ]
+  },
+  {
+    data: '2022-08',
+    list: [
+      {
+        title: '腾讯开源插件Puerts，用Typescript编写Unity3D脚本',
+        time: '2022-08-14',
+        id: 3,
+      }
+    ]
+  },
+  {
+    data: '2021-07',
+    list: [
+      {
+        title: 'Cesium 导航罗盘',
+        time: '2021-07-22',
+        id: 2,
+      }
+    ]
+  },
+  {
+    data: '2021-04',
+    list: [
+      {
+        title: 'Cesium加载大量Label实体时卡顿的一种解决方法',
+        time: '2021-04-08',
+        id: 1,
+      }
+    ]
+  }
+]

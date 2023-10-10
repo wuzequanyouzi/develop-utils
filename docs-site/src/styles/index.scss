@@ -5,6 +5,12 @@
   .content-wrap .img-wrap .title {
     font-size: 24px !important;
   }
+  .record-item-list .item .title {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 @media screen and (max-width: 1020px) {
   .img-wrap {
@@ -22,6 +28,12 @@
       left: -20% !important;
       transform: rotate(45deg) !important;;
     }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .records {
+    width: 90vw !important;
+    margin: 0 5vw !important;
   }
 }
 
