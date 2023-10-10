@@ -1,5 +1,6 @@
 <template>
   <div class="docs-content markdown-body">
+    <h1>{{ title }}</h1>
     <Test />
   </div>
 </template>
@@ -9,15 +10,17 @@ import "highlight.js/styles/github.css";
 import "../../styles/markdown.scss";
 import { useRoute } from "vue-router";
 import articleInfo from "../../article";
-import { defineAsyncComponent } from "vue";
+import { defineAsyncComponent, ref } from "vue";
 import NotData from "../../components/not-data/index.vue";
 
 const route = useRoute();
-const loadComponent = articleInfo.find(
+const currentArticle = articleInfo.find(
   (item) => item.id === Number(route.params.id)
-)?.component;
-console.log(route.params.id, loadComponent);
-const Test = loadComponent ? defineAsyncComponent(loadComponent) : NotData;
+);
+
+const title = ref(currentArticle?.title || '')
+
+const Test = currentArticle?.component ? defineAsyncComponent(currentArticle.component) : NotData;
 </script>
 
 <style lang="scss" scoped>
