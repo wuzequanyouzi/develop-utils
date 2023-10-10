@@ -55,6 +55,7 @@ watch(searchKey, () => {
       color: #eee;
       transform: translate(-50%,-50%);
       font-family: cursive;
+      white-space: nowrap;
     }
   }
   .content {

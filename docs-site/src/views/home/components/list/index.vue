@@ -95,6 +95,11 @@ const handleClick = (word) => {
       .desc {
         margin-top: 8px;
         font-size: 12px;
+				-webkit-box-orient: vertical;
+				text-overflow: ellipsis;
+				overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
       }
     }
     .item-right {

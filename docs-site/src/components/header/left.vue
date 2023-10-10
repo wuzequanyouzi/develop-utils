@@ -1,6 +1,6 @@
 <template>
   <div class="header-left">
-    <i class="icon"></i>
+    <img class="icon" src="../../assets/imgs/ai.png" />
     <h3>学习笔记</h3>
   </div>
 </template>
@@ -11,5 +11,11 @@
 .header-left {
   display: flex;
   align-items: center;
+  .icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 8x;
+  }
 }
 </style>
