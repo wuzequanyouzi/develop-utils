@@ -1,3 +1,8 @@
+@media screen and (max-width: 375px) {
+  .record-item-list .item .title {
+    max-width: 150px;
+  }
+}
 @media screen and (max-width: 750px) {
   .search-input {
     display: none;
