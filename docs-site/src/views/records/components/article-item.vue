@@ -1,3 +1,12 @@
+<!--
+ * @Author: zequan.wu
+ * @Date: 2023-10-10 15:02:20
+ * @LastEditors: zequan.wu
+ * @LastEditTime: 2023-10-11 10:04:36
+ * @FilePath: \develop-utils\docs-site\src\views\records\components\article-item.vue
+ * @Description: 
+ * 
+-->
 <template>
   <div class="data">{{ recordItem.data }}</div>
   <ul class="record-item-list">
@@ -43,6 +52,7 @@ const props = defineProps({
   }
   .title {
     font-weight: 600;
+    flex: 1;
 }
   .time {
     margin-left: auto;

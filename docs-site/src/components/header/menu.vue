@@ -2,6 +2,7 @@
   <div class="menu-wrap">
     <div
       class="menu-item"
+      :class="{ active: item.active }"
       v-for="item in menu"
       :key="item.key"
       @click="$router.push(item.path)"
@@ -13,27 +14,47 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watchEffect, defineEmits } from 'vue';
+import { useRoute } from 'vue-router';
+
+const emit = defineEmits(['currentRouteName']);
+
 const menu = ref([
   {
     path: '/',
     name: '🏠 首页',
     key: 'home',
-    icon: 'home'
+    icon: 'home',
+    active: false
   },
   {
     path: '/records',
     name: '📅 归档',
     key: 'records',
-    icon: 'records'
+    icon: 'records',
+    active: false
   },
   {
-    path: '/category',
-    name: '📂 分类',
-    key: 'category',
-    icon: 'category'
+    path: '/tools',
+    name: '📂 小工具',
+    key: 'tools',
+    icon: 'tools',
+    active: false
   }
 ])
+const route = useRoute();
+
+watchEffect(() => {
+  menu.value.forEach((item) => {
+    if (item.key === route.name?.toLowerCase()) {
+      emit('currentRouteName', route.name);
+      item.active = true;
+    } else {
+      item.active = false;
+    }
+  })
+})
+
 
 </script>
 
@@ -60,6 +81,11 @@ const menu = ref([
     }
     .menu-name {
       font-size: 14px;
+    }
+  }
+  .active {
+    &::after {
+      opacity: 1;
     }
   }
 }

@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/home/index.vue";
 import Records from "../views/records/index.vue";
-import Category from "../views/category/index.vue";
+import Tools from "../views/tools/index.vue";
 import Docs from "../views/docs/index.vue";
 
 const routes = [
@@ -22,11 +22,11 @@ const routes = [
     }
   },
   {
-    path: "/category",
-    name: "Category",
-    component: Category,
+    path: "/tools",
+    name: "Tools",
+    component: Tools,
     meta: {
-      title: '分类'
+      title: '小工具'
     }
   },
   {
