@@ -1,6 +1,7 @@
 <template>
-  <div>
-    123
+  <div class="tag-wrap" :data-param-name="tagItem.id">
+    <span>🎐</span>
+    <span>{{ tagItem.name }}</span>
   </div>
 </template>
 
@@ -18,4 +19,10 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+.tag-wrap {
+  border: 1px solid #ccc;
+  padding: 0 4px 0 0;
+  border-radius: 4px;
+  color: #666;
+}
 </style>

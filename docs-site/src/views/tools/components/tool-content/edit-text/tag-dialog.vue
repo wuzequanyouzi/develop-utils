@@ -17,6 +17,7 @@
 
 <script name="TagDialog" setup>
 import { ref, defineEmits, defineProps } from "vue";
+import tagListSource from './tag-list';
 
 const props = defineProps({
   modelValue: {
@@ -27,20 +28,7 @@ const props = defineProps({
 
 const emit = defineEmits(["input", "update:modelValue"]);
 
-const tagList = ref([
-  {
-    id: "be_strong",
-    name: "成为强者时",
-  },
-  {
-    id: "be_loser",
-    name: "退回弱者时",
-  },
-  {
-    id: "becoming_oneself",
-    name: "成为自己时",
-  },
-]);
+const tagList = ref(tagListSource);
 
 const handleClick = (tag) => {
   emit("input", tag);
