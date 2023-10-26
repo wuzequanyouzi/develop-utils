@@ -1,3 +1,12 @@
+<!--
+ * @Author: zequan.wu
+ * @Date: 2023-10-13 10:11:50
+ * @LastEditors: zequan.wu
+ * @LastEditTime: 2023-10-26 15:56:04
+ * @FilePath: \develop-utils\docs-site\src\views\tools\components\tool-menu.vue
+ * @Description: 
+ * 
+-->
 <template>
   <div class="tool-menu__wrap">
     <div class="tool-menu__one" v-for="item in menu" :key="item.key">
@@ -6,6 +15,7 @@
         class="tool-menu__two"
         v-for="child in item.children"
         :key="child.key"
+        @click="handleClick(child)"
       >
         {{ child.name }}
       </div>
@@ -14,7 +24,8 @@
 </template>
 
 <script name="ToolMenu" setup>
-import { ref } from "vue";
+import { ref, defineAsyncComponent, defineEmits } from "vue";
+const emit = defineEmits(['menu-click'])
 const menu = ref([
   {
     key: "1",
@@ -23,10 +34,133 @@ const menu = ref([
       {
         key: "edit-text",
         name: "可编辑tag文本框",
+        component: () => import('./tool-content/edit-text/index.vue'),
+      },
+      {
+        key: "transition-auto-height",
+        name: "高度过渡动画",
+        component: () => import('./tool-content/transition-auto-height/index.vue'),
+        props: [
+          {
+            time: 800,
+            content: `西风烈，
+长空雁叫霜晨月。
+霜晨月，
+马蹄声碎，
+喇叭声咽。
+雄关漫道真如铁，
+而今迈步从头越。
+从头越，
+苍山如海，
+残阳如血。`
+          },
+          {
+            time: 1200,
+            content: `红军不怕远征难，
+万水千山只等闲。
+五岭逶迤腾细浪，
+乌蒙磅礴走泥丸。
+金沙水拍云崖暖，
+大渡桥横铁索寒。
+更喜岷山千里雪，
+三军过后尽开颜。`
+          },
+          {
+            time: 500,
+            content: `
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+
+            `
+          }
+        ]
       },
     ],
   },
 ]);
+
+const handleClick = (child) => {
+  emit('menu-click', child);
+}
 </script>
 
 <style lang="scss" scoped>
